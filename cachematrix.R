@@ -18,16 +18,19 @@ makeCacheMatrix <- function(x = matrix()) {
   solvedX <- NULL
   
   # set the new origin matrix and drop the cache
-  set <- function(y) {
-    x <<- y
-    solvedX <<- NULL
+  set<-function(y) {
+    # check if the matrix has not changed
+    if(!identical(x,y) {
+      x <<- y
+      solvedX <<- NULL
+    }
   }
   
-  getorigin <- function() x
+  getorigin<-function() x
   
-  setsolved <- function(solved) solvedX <<- solved
+  setsolved<-function(solved) solvedX <<- solved
   
-  getsolved <- function() solvedX
+  getsolved<-function() solvedX
   
   list(set = set, get = get,
        setsolved = setsolved,
